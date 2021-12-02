@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@font-face {
+  font-family: 'Pretendard Variable';
+  src: url("../font/PretendardVariable-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '';
+  src: url("font/NotoSansKR-Regular-Alphabetic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: 'Noto Sans KR';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, figure, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  left: 0%;
+  top: 0;
+  background-color: #fff;
+  z-index: 4;
+}
+
+.header-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.header-container nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.header-container nav a {
+  margin: 0 20px;
+}
+
+main .preview {
+  margin-top: 2.5%;
+  background-color: #0052a6;
+}
+
+main .preview .first-pg {
+  width: 75%;
+  height: 644px;
+  margin: 0 auto;
+  position: relative;
+}
+
+main .preview .first-pg > .f-bg > img {
+  width: 100%;
+}
+
+main .preview .first-pg > .f-p-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  left: 12%;
+  top: 20%;
+  color: #fff;
+}
+
+main .preview .first-pg > .f-p-contents > .f-p-logo {
+  margin-bottom: 6%;
+}
+
+main .preview .first-pg > .f-p-contents > h2 {
+  font-size: 3rem;
+  margin-bottom: 6%;
+}
+
+main .preview .first-pg > .f-p-contents > .txt2 {
+  margin-bottom: 10%;
+  font-size: 1.2em;
+}
+
+main .preview .first-pg > .f-p-contents .connect {
+  display: inline-block;
+  width: 170px;
+  height: 48px;
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 7px;
+  color: #fff;
+}
+
+main .preview .first-pg .indic {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+main .preview .first-pg .indic span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+main .preview .first-pg .left-a {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+main .preview .first-pg .right-a {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
+main .subject1 ul {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .subject1 ul .liner {
+  border-bottom: 1px solid #eeeeee;
+  width: 100%;
+  margin-top: 10%;
+}
+
+main .subject1 ul > li {
+  width: 100%;
+}
+
+main .subject1 ul > li > h2 {
+  text-align: center;
+  font-size: 2.66rem;
+  margin: 10% 0;
+}
+
+main .subject1 ul > li .subcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .subject1 ul > li .sub {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 40px;
+}
+
+main .subject1 ul > li .sub > p {
+  width: 160px;
+  height: 160px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+main .subject1 ul > li .sub > .subtxt > h2 {
+  margin-bottom: 20px;
+}
+
+main .subject2 {
+  width: 100%;
+  background-color: #eeeeee;
+}
+
+main .subject2 > .sub2-1 {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+}
+
+main .subject2 > .sub2-1 > ul {
+  padding: 5% 0;
+  padding-left: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .subject2 > .sub2-1 > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+  background-color: #fff;
+  padding: 20px;
+  margin: 5px;
+}
+
+main .subject2 > .sub2-1 > ul > li:nth-of-type(5) {
+  width: 80%;
+}
+
+main .subject2 > .sub2-1 > .headline {
+  white-space: pre-line;
+  font-size: 2.66em;
+  position: absolute;
+  left: 10%;
+  top: 15%;
+}
+/*# sourceMappingURL=project.css.map */

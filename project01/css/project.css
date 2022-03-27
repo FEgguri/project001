@@ -53,25 +53,27 @@ em {
   font-style: normal;
 }
 
-.header {
+header {
   width: 100%;
   position: fixed;
-  left: 0%;
+  left: 0;
   top: 0;
   background-color: #fff;
   border-bottom: 2px solid #eeeeee;
   border-top: 2px solid #eeeeee;
-  position: relative;
+  -webkit-transition: .5s;
+  transition: .5s;
   z-index: 4;
 }
 
-.header .header-container {
+header .header-container {
+  position: relative;
   width: 60%;
   margin: 0 auto;
   padding: 15px;
 }
 
-.header .header-container > div {
+header .header-container > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,11 +91,11 @@ em {
   margin: 0 20px;
 }
 
-.header .header-container > div nav a {
+header .header-container > div nav a {
   margin: 0 20px;
 }
 
-.header .header-container > div .bgmn {
+header .header-container > div .bgmn {
   position: absolute;
   top: 30px;
   right: 30px;
@@ -104,19 +106,19 @@ em {
   transition: .5s;
 }
 
-.header .header-container > div .bgmn .line {
+header .header-container > div .bgmn .line {
   display: block;
   width: 24px;
   height: 3px;
   background-color: #000;
 }
 
-.header .header-container > div .bgmn .line:nth-of-type(1) {
+header .header-container > div .bgmn .line:nth-of-type(1) {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
 }
 
-.header .header-container > div .bgmn .line:nth-of-type(3) {
+header .header-container > div .bgmn .line:nth-of-type(3) {
   -webkit-transform: translateY(5px);
           transform: translateY(5px);
 }
@@ -720,7 +722,7 @@ main .preview:hover > .first-pg > .indic {
 }
 
 main .preview .first-pg {
-  width: 60%;
+  width: 100%;
   height: 644px;
   margin: 0 auto;
   position: relative;
@@ -728,9 +730,11 @@ main .preview .first-pg {
 
 main .preview .first-pg > .f-bg > img {
   width: 100%;
+  z-index: -2;
 }
 
-main .preview .first-pg > .f-p-contents {
+main .preview .first-pg .f-p-contents {
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -747,21 +751,21 @@ main .preview .first-pg > .f-p-contents {
   color: #fff;
 }
 
-main .preview .first-pg > .f-p-contents > .f-p-logo {
+main .preview .first-pg .f-p-contents > .f-p-logo {
   margin-bottom: 6%;
 }
 
-main .preview .first-pg > .f-p-contents > h2 {
+main .preview .first-pg .f-p-contents > h2 {
   font-size: 3rem;
   margin-bottom: 6%;
 }
 
-main .preview .first-pg > .f-p-contents > .txt2 {
+main .preview .first-pg .f-p-contents > .txt2 {
   margin-bottom: 10%;
   font-size: 1.2em;
 }
 
-main .preview .first-pg > .f-p-contents .connect {
+main .preview .first-pg .f-p-contents .connect {
   display: inline-block;
   width: 170px;
   height: 48px;
@@ -775,10 +779,17 @@ main .preview .first-pg > .f-p-contents .connect {
   transition: .5s;
 }
 
-main .preview .first-pg > .f-p-contents .connect:hover {
+main .preview .first-pg .f-p-contents .connect:hover {
   border-color: #fff;
   background-color: #fff;
   color: #000;
+}
+
+main .preview .first-pg img {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 main .preview .first-pg .indic {
@@ -798,11 +809,18 @@ main .preview .first-pg .indic span {
   margin-right: 20px;
 }
 
-main .preview .first-pg:hover > .left-a, main .preview .first-pg:hover > .right-a {
+main .preview .first-pg:hover > .left-a::after, main .preview .first-pg:hover > .right-a {
   opacity: 100%;
 }
 
 main .preview .first-pg .left-a {
+  display: none;
+  position: absolute;
+}
+
+main .preview .first-pg .left-a::after {
+  content: '';
+  background-image: url("/project01/img/project1/nav.png");
   position: absolute;
   left: 5%;
   top: 50%;
@@ -814,6 +832,7 @@ main .preview .first-pg .left-a {
 }
 
 main .preview .first-pg .right-a {
+  display: none;
   position: absolute;
   right: 5%;
   top: 50%;
@@ -838,6 +857,17 @@ main .subject1 .subcontent > h2 {
   text-align: center;
   margin-bottom: 5%;
   white-space: pre-line;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  opacity: 0;
+}
+
+main .subject1 .subcontent > h2.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
 }
 
 main .subject1 .subcontent ul {
@@ -856,9 +886,20 @@ main .subject1 .subcontent ul {
           flex-direction: row;
 }
 
+main .subject1 .subcontent ul li.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+}
+
 main .subject1 .subcontent ul li {
   width: 50%;
   text-align: left;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  opacity: 0;
 }
 
 main .subject1 .subcontent ul li > a {
@@ -906,6 +947,105 @@ main .subject1 .subcontent ul li > a div > span {
   white-space: pre-line;
 }
 
+main .subject1 .subcontent1 {
+  margin: 10% auto;
+}
+
+main .subject1 .subcontent1 > h2 {
+  font-size: 2.66rem;
+  text-align: center;
+  margin-bottom: 5%;
+  white-space: pre-line;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  opacity: 0;
+}
+
+main .subject1 .subcontent1 > h2.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+}
+
+main .subject1 .subcontent1 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main .subject1 .subcontent1 ul li.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+}
+
+main .subject1 .subcontent1 ul li {
+  width: 50%;
+  text-align: left;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  opacity: 0;
+}
+
+main .subject1 .subcontent1 ul li > a {
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main .subject1 .subcontent1 ul li > a:hover > div > h2 {
+  text-decoration: underline;
+}
+
+main .subject1 .subcontent1 ul li > a p {
+  background-color: #eeeeee;
+  border-radius: 100%;
+  width: 160px;
+  height: 160px;
+}
+
+main .subject1 .subcontent1 ul li > a p img {
+  width: 100%;
+}
+
+main .subject1 .subcontent1 ul li > a div {
+  width: calc(100% - 160px);
+  text-align: left;
+  padding: 0 6%;
+}
+
+main .subject1 .subcontent1 ul li > a div > span {
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #7c7c7c;
+  white-space: pre-line;
+}
+
 main .subject2 {
   width: 100%;
   background-color: #eeeeee;
@@ -937,6 +1077,12 @@ main .subject2 > .sub2-1 > ul {
       flex-wrap: wrap;
 }
 
+main .subject2 > .sub2-1 > ul > li.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+}
+
 main .subject2 > .sub2-1 > ul > li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -951,6 +1097,11 @@ main .subject2 > .sub2-1 > ul > li {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  opacity: 0;
   width: 49.4%;
   height: 30%;
   background-color: #fff;
@@ -981,6 +1132,17 @@ main .subject2 > .sub2-1 > .headline {
   position: absolute;
   left: 0%;
   top: 15%;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  opacity: 0;
+}
+
+main .subject2 > .sub2-1 > .headline.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
 }
 
 main .tell {

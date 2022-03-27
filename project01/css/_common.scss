@@ -49,6 +49,15 @@ em{font-style: normal;}
     display: block;
     font-size: 1rem; font-weight: normal;
 }
+@mixin fadein1{
+    transform: translateY(25%);
+    transition: 1.5s;
+    opacity: 0;
+}
+@mixin fadein2{
+    transform: translateY(0%);
+    opacity: 1;
+}
 
 //body
 $sub-color : rgb(238, 238, 238);
@@ -60,19 +69,23 @@ $mar-c:0 auto;
 
 
 //header-start
-.header{
+
+
+header{
     width: 100%;
+  
     position: fixed;
-    left: 0%; top: 0;
+    left: 0; top: 0;
     background-color: #fff;
     border-bottom: 2px solid $sub-color;
     border-top: 2px solid $sub-color;
-    position: relative;
-
-   
+    transition: .5s;
+    
+    
     z-index: 4;
-
-.header-container{
+    
+    .header-container{
+    position: relative;
     width: 60%;
     margin: 0 auto;
     padding: 15px;
